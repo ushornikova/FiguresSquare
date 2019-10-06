@@ -19,16 +19,29 @@ namespace FiguresSquare
             int B = Convert.ToInt32(sideb);
 
             Triangle vartriangle = new Triangle(S, B);
-            vartriangle.GetSquare();
-            Console.ReadLine();
+            //vartriangle.GetSquare();
+            string varT = Console.ReadLine();
+            int varT1 = Convert.ToInt32(varT);
 
             Rectangle varrectangle = new Rectangle(S, B);
-            varrectangle.GetSquare();
-            Console.ReadLine();
+            //varrectangle.GetSquare();
+            string varR = Console.ReadLine();
+            int varR1 = Convert.ToInt32(varR);
 
             Circle varcircle = new Circle(S);
-            varcircle.GetSquare();
+            //varcircle.GetSquare();
+            string varC = Console.ReadLine();
+            int varC1 = Convert.ToInt32(varC);
+            Dictionary<string, int> Shape = new Dictionary<string, int>();
+            Shape.Add("Triangle", varT1);
+            Shape.Add("Rectangle", varR1);
+            Shape.Add("Circle", varC1);
+
+            for (int j = 1; j < Shape.Count; j++)
+            { Console.WriteLine(Shape.Keys.ElementAt(j) + "has square "+ Shape.Values.ElementAt(j));
+            }
             Console.ReadLine();
+                
         }
 
         class Square
@@ -54,10 +67,10 @@ namespace FiguresSquare
                 TriangleSquare = side * height / 2;
             }
 
-            public void GetSquare()
-            {
-                Console.WriteLine("Площа трикутника =" + TriangleSquare);
-            }
+            //public void GetSquare()
+            //{
+            //    Console.WriteLine("Площа трикутника =" + TriangleSquare);
+            //}
         }
 
        class Rectangle : Square
@@ -70,10 +83,10 @@ namespace FiguresSquare
                 SideB = sideb;
                 RectangleSquare = side * sideb;
             }
-            public void GetSquare()
-            {
-                Console.WriteLine("Площа прямокутника =" + RectangleSquare);
-            }
+            //public void GetSquare()
+            //{
+            //    Console.WriteLine("Площа прямокутника =" + RectangleSquare);
+            //}
         }
 
         class Circle : Square
@@ -86,10 +99,10 @@ namespace FiguresSquare
                 CircleSquare = P * side * side;
             }
 
-            public void GetSquare()
-            {
-                Console.WriteLine("Площа кола =" + CircleSquare);
-            }
+            //public void GetSquare()
+            //{
+            //    Console.WriteLine("Площа кола =" + CircleSquare);
+            //}
         }
     }
 }
